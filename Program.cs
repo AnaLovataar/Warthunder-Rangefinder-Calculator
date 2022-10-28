@@ -14,16 +14,24 @@ namespace APCalculator
 
             void ArtyLoop()
             {
-                Console.WriteLine(GridOffset);
 
-                Console.WriteLine("Enter a value for Y.");
-                Double Y = Double.Parse(Console.ReadLine());
+                Console.WriteLine("Enter your current Y position.");
+                Double Y1 = Double.Parse(Console.ReadLine());
 
-                Console.WriteLine("Enter a value for X.");
-                Double X = Double.Parse(Console.ReadLine());
+                Console.WriteLine("Enter your current X position.");
+                Double X1 = Double.Parse(Console.ReadLine());
 
-                Double widthHypotenuse = (Y * Y) + (X * X);
-                Console.WriteLine("Hypotenuse = " + Math.Sqrt(widthHypotenuse));
+                Console.WriteLine("Enter your target's current Y position.");
+                Double Y2 = Double.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter your target's current X position.");
+                Double X2 = Double.Parse(Console.ReadLine());
+
+                Double Distance = Math.Sqrt(((Y2 - Y1) * (Y2 - Y1)) + ((X2 - X1) * (X2 - X1)));
+
+                Double DistanceMeters = (Distance) * (GridOffset);
+
+                Console.WriteLine(DistanceMeters);
 
                 Console.WriteLine("------------------------------------------------");
             }
